@@ -27,6 +27,7 @@ public GeneradorDeProductosController(ChatClient.Builder chatClientBuilder) {
   @GetMapping
   String generadorProductos(String userInput) {
     var pregunta = "Genera 5 productos ecológicos";
+
     return this.chatClient.prompt()
         .user(pregunta)
         .options(ChatOptionsBuilder
@@ -37,6 +38,7 @@ public GeneradorDeProductosController(ChatClient.Builder chatClientBuilder) {
         )
         .call()
         .content();
+
   }
 
 }
